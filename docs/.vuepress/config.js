@@ -8,7 +8,7 @@ export default defineUserConfig({
   title: 'Yatori',
   // description: 'This is a new generation of course management software.',
   description: '这是一个新一代在线课程管理系统',
-
+  base: '/yatori-docs/',
   theme: defaultTheme({
     logo: 'https://github.com/Changbaiqi/yatori/blob/main/README/images/1710254379397-modified.png?raw=true',
 
