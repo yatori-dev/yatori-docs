@@ -1,31 +1,31 @@
 {
-  "hash": "1d243213",
-  "configHash": "f84dab41",
+  "hash": "7b6b5436",
+  "configHash": "b32dab7e",
   "lockfileHash": "6eed84fe",
-  "browserHash": "9dc1db4a",
+  "browserHash": "6e3d404c",
   "optimized": {
     "@vue/devtools-api": {
       "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "@vue_devtools-api.js",
-      "fileHash": "b46353c8",
+      "fileHash": "99823f10",
       "needsInterop": false
     },
     "@vuepress/shared": {
       "src": "../../../../node_modules/@vuepress/shared/dist/index.js",
       "file": "@vuepress_shared.js",
-      "fileHash": "3d14032e",
+      "fileHash": "926edf74",
       "needsInterop": false
     },
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "18ef2df5",
+      "fileHash": "68ed65bf",
       "needsInterop": false
     },
     "vue-router": {
       "src": "../../../../node_modules/vue-router/dist/vue-router.esm-bundler.js",
       "file": "vue-router.js",
-      "fileHash": "19fcb2d0",
+      "fileHash": "7704c939",
       "needsInterop": false
     }
   },

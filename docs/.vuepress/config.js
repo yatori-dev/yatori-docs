@@ -12,7 +12,7 @@ export default defineUserConfig({
   theme: defaultTheme({
     logo: 'https://github.com/Changbaiqi/yatori/blob/main/README/images/1710254379397-modified.png?raw=true',
 
-    navbar: ['/', '/get-started'],
+    navbar: ['/','/yatori-go-console/docs','/yatori-go-core/docs'],
   }),
 
   bundler: viteBundler(),
