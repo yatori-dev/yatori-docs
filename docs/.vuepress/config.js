@@ -19,6 +19,10 @@ export default defineUserConfig({
 
     navbar: ['/','/yatori-go-console/docs','/yatori-go-core/docs'],
   }),
-
+  markdown: {
+    extendMarkdown: md=> {
+      md.use(require("markdown-it-disable-url-encode"));
+    }
+  },
   bundler: viteBundler(),
 })

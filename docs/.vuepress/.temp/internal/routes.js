@@ -3,8 +3,8 @@ export const redirects = JSON.parse("{}")
 export const routes = Object.fromEntries([
   ["/get-started.html", { loader: () => import(/* webpackChunkName: "get-started.html" */"E:/Yatori-Dev/yatori-docs/docs/.vuepress/.temp/pages/get-started.html.js"), meta: {"title":"Get Started"} }],
   ["/", { loader: () => import(/* webpackChunkName: "index.html" */"E:/Yatori-Dev/yatori-docs/docs/.vuepress/.temp/pages/index.html.js"), meta: {"title":"Home"} }],
-  ["/yatori-go-console/docs.html", { loader: () => import(/* webpackChunkName: "yatori-go-console_docs.html" */"E:/Yatori-Dev/yatori-docs/docs/.vuepress/.temp/pages/yatori-go-console/docs.html.js"), meta: {"title":"Yaotri-go-console"} }],
   ["/guide/Test.html", { loader: () => import(/* webpackChunkName: "guide_Test.html" */"E:/Yatori-Dev/yatori-docs/docs/.vuepress/.temp/pages/guide/Test.html.js"), meta: {"title":"测试页面"} }],
+  ["/yatori-go-console/docs.html", { loader: () => import(/* webpackChunkName: "yatori-go-console_docs.html" */"E:/Yatori-Dev/yatori-docs/docs/.vuepress/.temp/pages/yatori-go-console/docs.html.js"), meta: {"title":"Yaotri-go-console"} }],
   ["/yatori-go-core/docs.html", { loader: () => import(/* webpackChunkName: "yatori-go-core_docs.html" */"E:/Yatori-Dev/yatori-docs/docs/.vuepress/.temp/pages/yatori-go-core/docs.html.js"), meta: {"title":"Yatori-go-core"} }],
   ["/404.html", { loader: () => import(/* webpackChunkName: "404.html" */"E:/Yatori-Dev/yatori-docs/docs/.vuepress/.temp/pages/404.html.js"), meta: {"title":""} }],
 ]);
