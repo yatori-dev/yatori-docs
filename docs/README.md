@@ -1,17 +1,20 @@
 ---
 home: true
 title: Home
-heroImage: https://github.com/Changbaiqi/yatori/blob/main/README/images/1710254379397-modified.png?raw=true
+heroImage: /img/logo.png
 actions:
   # - text: Get Started
-  - text: 获取
+  - text: 获取yatori-go-console
     # link: /getting-started.html
-    link: https://www.github.com/Changbaiqi/yatori
+    link: https://github.com/yatori-dev/yatori-go-console
     type: primary
-
+  - text: 获取yatori-go-core
+    # link: /getting-started.html
+    link: https://github.com/yatori-dev/yatori-go-core
+    type: primary
   # - text: Introduction
   - text: 介绍
-    link: https://www.github.com/Changbaiqi/yatori
+    link: https://www.github.com/yatori-dev
     type: secondary
 
 features:

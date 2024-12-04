@@ -11,7 +11,7 @@ export default defineUserConfig({
   base: '/yatori-docs/',
   head: [
     [
-      'link', {rel: 'icon', href: 'https://raw.githubusercontent.com/yatori-dev/.github/refs/heads/main/profile/1710254379397-modified.png'}
+      'link', {rel: 'icon', href: '/img/logo.png'}
     ]
   ],
   theme: defaultTheme({
