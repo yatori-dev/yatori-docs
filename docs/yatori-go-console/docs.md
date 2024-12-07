@@ -122,3 +122,22 @@ users:
       excludeCourses: []
 ```
 
+
+## ❓关于Linux系统版本运行报错问题
+* 若出现`error while loading shared libraries: libasound.so.2: cannot open shared object file: No such file or directory`报错
+* 此报错是因为Linux未安装音频库造成的，常出现在只有控制台界面的Linux当中，所以只需要安装对应libasound库就行
+
+Ubuntu:
+```shell
+sudo apt install libasound2
+```
+
+CentOS:
+```shell
+sudo yum install alsa-lib
+```
+
+Arch Linux:
+```shell
+sudo pacman -S alsa-lib
+```
