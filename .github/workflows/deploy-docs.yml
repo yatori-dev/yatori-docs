@@ -27,8 +27,8 @@ jobs:
 
       # 构建 VitePress 项目
       - name: Build VitePress
-        run: |
-          npm run build  # VitePress 默认的构建命令，如果有自定义命令可以替换
+        run: | # VitePress 默认的构建命令，如果有自定义命令可以替换
+          npm run docs:build 
 
       # 部署到 GitHub Pages
       - name: Deploy to GitHub Pages
