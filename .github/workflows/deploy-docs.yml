@@ -1,39 +1,39 @@
-name: 部署VitePress
+name: Deploy VitePress to GitHub Pages
 
 on:
   push:
     branches:
-      - main # 这段是在推送到 docs 分支时触发该命令
+      - main  # 只在 main 分支有提交时触发部署（可以根据需要修改）
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          ref: main # 这一步检查 docs 代码
+      # Checkout 仓库
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Setup Node.js and pnpm
+      # 设置 Node.js 环境
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20.10.0' # 设置 nodejs 的版本
-          
-      - name: Install pnpm
-        run: npm install -g pnpm # 全局安装 pnpm
+          node-version: '20.10.0'  # 可以根据需要修改 Node.js 版本
 
+      # 安装依赖
       - name: Install dependencies
-        run: pnpm install # 使用 pnpm 安装依赖
+        run: |
+          npm install
 
+      # 构建 VitePress 项目
       - name: Build VitePress
-        run: pnpm run docs:build # 这里是打包 vitepress 命令
+        run: |
+          npm run build  # VitePress 默认的构建命令，如果有自定义命令可以替换
 
+      # 部署到 GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          publish_dir: .vitepress/dist # 指定该文件夹中的 dist 
-          publish_branch: gh-pages # 推送到关联仓库的 gh-pages 分支
-          dotfiles: true  # 包括在提交中，即使被 .gitignore 文件忽略
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist  # VitePress 默认输出目录
+          publish_branch: gh-pages  # 推送到 gh-pages 分支
