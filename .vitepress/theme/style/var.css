@@ -10,6 +10,8 @@
 .image-src{
   animation: tcc 8s ease infinite;
   border-radius: 50%;
+  transition: transform 0.5s ease-in-out; /* 平滑过渡效果 */
+  transform-origin: center center;
 }
 @keyframes tcc{
   0% {
@@ -36,4 +38,7 @@
   box-shadow: 0 0 500px 100px rgba(32, 136, 255, 0.612); 
   background-position: 0% 50%;
 }
+}
+.image-src:hover {
+  transform: translateX(-160px) translateY(-160px) scale(0.90);
 }
