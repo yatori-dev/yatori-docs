@@ -3,7 +3,7 @@ name: 部署VitePress
 on:
   push:
     branches:
-      - docs # 这段是在推送到 docs 分支时触发该命令
+      - main # 这段是在推送到 docs 分支时触发该命令
 
 jobs:
   build-and-deploy:
