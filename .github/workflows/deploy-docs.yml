@@ -1,50 +1,38 @@
-
-name: Deploy Docs
+name: 部署VitePress
 
 on:
   push:
     branches:
-      # make sure this is the branch you are using
-      - main
-
-permissions:
-  contents: write
+      - docs # 这段是在推送到 docs 分支时触发该命令
 
 jobs:
-  deploy-gh-pages:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v2
         with:
-          fetch-depth: 0
-          # if your docs needs submodules, uncomment the following line
-          # submodules: true
+          ref: docs # 这一步检查 docs 代码
 
-
-
-      - name: Setup Node.js
+      - name: Setup Node.js and pnpm
         uses: actions/setup-node@v3
         with:
-          node-version: 20
-          cache: npm
+          node-version: '20.10.0' # 设置 nodejs 的版本
+          
+      - name: Install pnpm
+        run: npm install -g pnpm # 全局安装 pnpm
 
-      - name: Install Deps
-        run: |
-          npm install
-          npm ci
+      - name: Install dependencies
+        run: pnpm install # 使用 pnpm 安装依赖
 
-      - name: Build Docs
-        env:
-          NODE_OPTIONS: --max_old_space_size=8192
-        run: |-
-          npm run docs:build
+      - name: Build VitePress
+        run: pnpm run docs:build # 这里是打包 vitepress 命令
 
-      - name: Deploy for Github 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: gh-pages
-          folder: docs/.vitepress/dist
-          # enable single-commit to reduce the repo size
-          single-commit: true
-          clean: true
+          github_token: ${{ secrets.PAT_TOKEN }} # 这一步很重要，单独看下面的大步骤，主要是用来给该脚本一些仓库权限
+          publish_dir: .vitepress/dist # 指定该文件夹中的 dist 
+          publish_branch: gh-pages # 推送到关联仓库的 gh-pages 分支
+          dotfiles: true  # 包括在提交中，即使被 .gitignore 文件忽略
