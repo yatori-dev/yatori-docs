@@ -12,8 +12,8 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Yatori-go-console docs', link: '/yatori-go-console/about' },
-      { text: 'Yatori-go-core docs', link: '/markdown-examples' }
+      { text: 'Yatori-go-console Docs', link: '/yatori-go-console/docs' },
+      { text: 'Yatori-go-core Docs', link: '/yatori-go-core/docs' }
     ],
     sidebar: {
       '/yatori-go-console/': [
