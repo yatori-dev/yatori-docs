@@ -29,11 +29,9 @@ jobs:
       - name: Build VitePress
         run: | # VitePress 默认的构建命令，如果有自定义命令可以替换
           npm run docs:build 
-
-      # 部署到 GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+          
+      - name: Deploy Docs
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist  # VitePress 默认输出目录
-          publish_branch: gh-pages  # 推送到 gh-pages 分支
+          branch: gh-pages                 # 部署目标分支
+          folder: ./dist      # VitePress/VuePress 构建后的输出目录
