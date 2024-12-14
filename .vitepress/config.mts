@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "yatori-docs",
   description: "This is a yatori-docs",
+  base: '/yatori-docs/',
   head: [
     ['link',{rel:'icon',href:'/img/logo.png'}]
   ],
