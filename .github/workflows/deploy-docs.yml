@@ -40,8 +40,11 @@ jobs:
         run: |-
           npm run docs:build
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy for Github 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/.vitepress/dist
+          branch: gh-pages
+          folder: docs/.vitepress/dist
+          # enable single-commit to reduce the repo size
+          single-commit: true
+          clean: true
