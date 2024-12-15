@@ -10,6 +10,9 @@ hero:
     src: /img/logo.png
   actions:
     - theme: brand
+      text: 介绍
+      link: /introduction/docs
+    - theme: alt
       text: Yatori-go-console
       link: https://github.com/yatori-dev/yatori-go-console
     - theme: alt
