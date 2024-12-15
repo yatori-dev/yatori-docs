@@ -14,8 +14,10 @@
   <style>
   .home-hero-image .bg{
     background: linear-gradient(45deg, rgb(255, 0, 0), rgba(0, 106, 254, 0.7), rgb(0 172 193 / 70%), rgb(122, 32, 171),rgb(255 255 255),rgb(255, 152, 42));
-    background-size: 400%;
+    background-size: 500%;
     animation: tcc 10s ease infinite;
+    filter: blur(100px);
+    z-index: -1;
 }
 .home-hero-image img{
   /* 平滑过渡效果 */
@@ -66,8 +68,6 @@
     position: absolute;
     height: 200px;
     width: 200px;
-    filter: blur(150px);
-    z-index: -1;
   }
 }
 
@@ -89,8 +89,6 @@
     position: absolute;
     height: 250px;
     width: 250px;
-    filter: blur(150px);
-    z-index: -1;
   }
 }
 
@@ -111,8 +109,6 @@
     position: absolute;
     height: 350px;
     width: 350px;
-    filter: blur(150px);
-    z-index: -1;
   }
 }
   </style>
