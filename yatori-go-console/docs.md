@@ -16,7 +16,7 @@ Hello，欢迎来到yatori系列yatori-go-console，此项目采用GO语言开�
 | 社会公益课       | 支持暴力模式（会被检测到）             | 已完成 ✅ |
 | 重庆工程学院CQIE | 支持暴力模式（支持秒刷）                 | 已完成 ✅ |
 | 学习公社         | 无                                     | 已完成 ✅ |
-| 学习通           | 无                                     | 开发中 🚧 |
+| 学习通           | 无                                     | 已完成 ✅ |
 | 智慧树           | 无                                     | 开发中 🚧 |
 
 ::: tip
@@ -71,8 +71,8 @@ setting:
     model: "" #AI模型，不填则使用yatori默认选择的模型，如果你用的豆包则必填并且填的是接入点ID非模型名称，比如ep-2024xxxxx
     API_KEY: "" #AI平台对应的apikey
 users:
-  - accountType: "YINGHUA" #平台类型，英华学堂：YINGHUA、仓辉：CANGHUI、学习公社：ENAEA、学习通：XUEXIT、重庆工业学院：CQIE
-    url: "url" #对应平台的url链接,学习公社和CQIE可以不用填且可以直接把这一行去掉
+  - accountType: "YINGHUA" #平台类型，英华学堂：YINGHUA、仓辉：CANGHUI、学习公社：ENAEA、学习通：XUEXITONG、重庆工业学院：CQIE
+    url: "url" #对应平台的url链接,学习公社、CQIE、学习通可以不用填且可以直接把这一行去掉
     account: "账号" #账号
     password: "密码" #密码
     coursesCustom:
