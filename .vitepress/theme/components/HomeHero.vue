@@ -12,7 +12,7 @@
   </script>
   
   <style>
-  .home-hero-image .bg{
+.home-hero-image .bg{
     background: linear-gradient(45deg, rgb(255, 0, 0), rgba(0, 106, 254, 0.7), rgb(0 172 193 / 70%), rgb(122, 32, 171),rgb(255 255 255),rgb(255, 152, 42));
     background-size: 500%;
     animation: tcc 10s ease infinite;
