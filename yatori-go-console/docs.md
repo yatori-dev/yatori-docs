@@ -127,6 +127,52 @@ users:
       excludeCourses: []
 ```
 
+## 🚀 关于如何接入Deepseek大模型答题
+因为该软件目前支持OpenAI规范接入格式，所以只要适配了OpenAI对接API范式的模型都可以直接接入使用，Deepseek也是如此。
+
+1、第一步：
+
+* 接入Deepseek你只需要先去[Deepseek开放平台](https://platform.deepseek.com/api_keys)获取API-KEY。
+
+![](./assets/img/download_12.png)
+
+2、第二步：
+* 之后你只需要需要把获取到的API-key配置到config.yml文件内的AI配置项里面即可。以下为配置模板样式：
+```yml
+setting:
+  basicSetting:
+    completionTone: 1
+    colorLog: 1
+    logOutFileSw: 1
+    logLevel: "INFO"
+    logModel: 0 
+    ipProxySw: 0 
+  aiSetting:
+    aiType: "OTHER" # Deepseek的话填OTHER
+    aiUrl: "https://api.deepseek.com/chat/completions" # 这条固定写法
+    model: "deepseek-chat" # Deepseek目前只支持这个模型，新模型后续支持
+    API_KEY: "sk-39******a1" #注意！！替换为Deepseek你账户的的API-KEY
+users:
+  - accountType: "YINGHUA"
+    url: "https://mooc.xxx.cn/" # 对应你学校平台url
+    account: "*****" # 账号
+    password: "*****" #密码
+    coursesCustom:
+      videoModel: 1
+      autoExam: 1
+      includeCourses: []
+      excludeCourses: []
+```
+
+
+## ❓ 关于报错Platform-specific initialization failed解决
+* 若出现以下情况报错，可能因为系统缺失相关DLL库导致的问题，此情况多发生在windows server系统。
+
+![](./assets/img/download_11.jpg)
+
+* 解决方法为使用DLL修复工具进行修复，如使用[4DDiG DLL Fixer](https://www.softjinzhou.com/)工具。
+
+
 
 ## ❓关于Linux系统版本运行报错问题
 * 若出现`error while loading shared libraries: libasound.so.2: cannot open shared object file: No such file or directory`报错
