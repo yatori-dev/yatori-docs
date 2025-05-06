@@ -13,7 +13,16 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Yatori-go-console Docs', link: '/yatori-go-console/docs' },
-      { text: 'Yatori-go-core Docs', link: '/yatori-go-core/docs' }
+      { text: 'Yatori-go-core Docs', link: '/yatori-go-core/docs' },
+      {
+        text: 'Other',
+        items: [
+          {
+            text: '题库对接文档',
+            link: '/bank-interface-api/docs'
+          }
+        ]
+      }
     ],
     sidebar: {
       '/yatori-go-console/': [
