@@ -2,3 +2,5 @@
     请勿相信任何有关yatori软件的贩卖信息，软件
 代码始终开源免费且只供学习交流请勿用于违法用途。
 有问题请加QQ群：932447008
+
+tips: 配置文件生成器 --> https://yatori-dev.github.io/yatori-config-generate/
