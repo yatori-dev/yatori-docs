@@ -126,9 +126,42 @@ users:
       includeCourses: []
       excludeCourses: []
 ```
+## 🚀 关于如何接入通义千问大模型答题
+因为该软件目前支持OpenAI规范接入格式，所以只要适配了OpenAI对接API范式的模型都可以直接接入使用，通义千问也是如此。
+
+1、第一步：
+* 接入通义千问你只需要先去[百炼控制台](https://bailian.console.aliyun.com)登录后选择一个模型，这里我就选择通义的Plus-Latest模型（注意！！！一定要是文本大模型，其他什么图片生成模型啥的都不行！！！）
+
+![alt text](./assets/img/download_13.png)
+
+2、第二步：
+* 进入过后根据自己选择的模型然后点击立即体验
+
+![alt text](./assets/img/download_14.png)
+
+* 然后点击`文本调试`-->`代码`,下图中圈出来的`model`参数就是我们需要填到配置文件里面`model`的参数
+
+![alt text](./assets/img/download_15.png)
+
+![alt text](./assets/img/download_16.png)
+
+3、第三步：
+* 点击`API-Key`创建对接秘钥
+
+![alt text](./assets/img/download_17.png)
+
+![alt text](./assets/img/download_18.png)
+
+![alt text](./assets/img/download_19.png)
+
+* 然后粘贴到`config.yaml`配置文件对应项就行
+
+![alt text](./assets/img/download_20.png)
+
+之后就就可以愉快的答题了，答题前请确保账号有足够额度答题，一般情况下新账号都有免费额度的。
 
 ## 🚀 关于如何接入Deepseek大模型答题
-因为该软件目前支持OpenAI规范接入格式，所以只要适配了OpenAI对接API范式的模型都可以直接接入使用，Deepseek也是如此。
+因为该软件目前支持OpenAI规范接入格式，所以只要适配了OpenAI对接API范式的模型都可以直接接入使用，Deepseek也是如此。（在使用前请确保AI账号有足够额度）
 
 1、第一步：
 
