@@ -208,11 +208,11 @@ users:
 这里我以Clash verge为例，机场自行配置。
 首先在clash中开启并查看对应http代理端口是什么
 
-![](./assets/img/download_13.png)
+![](./assets/img/download_21.png)
 
 然后在同yatori的exe文件同目录下创建ip.txt文件，并且在里面填写对应代理url
 
-![](./assets/img/download_14.png)
+![](./assets/img/download_22.png)
 
 之后再在对应用户配置下`ipProxy`开启IP代理设置即可
 
@@ -251,7 +251,7 @@ users:
 
 使用网上的ip代理也是一样的操作，只需要改变ip.txt里面的代理url即可,之后直接开启`isPorxy`然后启动`start.bat`
 
-![](./assets/img/download_15.png)
+![](./assets/img/download_23.png)
 
 ## ❓ 关于报错Platform-specific initialization failed解决
 * 若出现以下情况报错，可能因为系统缺失相关DLL库导致的问题，此情况多发生在windows server系统。
