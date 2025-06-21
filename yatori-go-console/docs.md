@@ -48,6 +48,9 @@ Hello，欢迎来到yatori系列yatori-go-console，此项目采用GO语言开�
 2、将最主要的平台类型以及url链接和账号密码填写好之后保存（其他配置自行参考[配置文件填写说明](#🚀-配置文件填写说明)）
 ![](./assets/img/download_8.png)
 
+3、当然如果你任然不明白怎么填写，也可以使用配置文件生成器来根据你填写的表单自动生成配置文件[点击跳转配置文件生成器](https://yatori-dev.github.io/yatori-config-generate/)
+v
+
 ### 第四步启动yatori
 ![](./assets/img/download_9.png)
 
@@ -164,6 +167,58 @@ users:
       excludeCourses: []
 ```
 
+
+## 🚀 关于如何启用IP代理服务
+
+### 使用自己的机场代理
+
+这里我以Clash verge为例，机场自行配置。
+首先在clash中开启并查看对应http代理端口是什么
+
+![](./assets/img/download_13.png)
+
+然后在同yatori的exe文件同目录下创建ip.txt文件，并且在里面填写对应代理url
+
+![](./assets/img/download_14.png)
+
+之后再在对应用户配置下`ipProxy`开启IP代理设置即可
+
+```yaml
+setting:
+  basicSetting:
+    completionTone: 1
+    colorLog: 1
+    logOutFileSw: 1
+    logLevel: "INFO"
+    logModel: 0
+  aiSetting:
+    aiType: "TONGYI"
+    aiUrl: ""
+    model: ""
+    API_KEY: ""
+  apiQueSetting:
+    url: "http://localhost:8083"
+users:
+ - accountType: "YINGHUA"
+   url: "https://xxx.qiankj.com"
+   account: "114514"
+   password: "******"
+   isProxy: 1 # 0代表关闭此用户代理，1代表开启此用户代理
+   coursesCustom:
+     videoModel: 1
+     autoExam: 0
+     examAutoSubmit: 0
+     includeCourses: ["《3D绘图与制作》"]
+     excludeCourses: []
+```
+
+完成后直接双击`start.bat`启动即可
+
+### 使用网上的代理IP
+
+使用网上的ip代理也是一样的操作，只需要改变ip.txt里面的代理url即可,之后直接开启`isPorxy`然后启动`start.bat`
+
+![](./assets/img/download_15.png)
 
 ## ❓ 关于报错Platform-specific initialization failed解决
 * 若出现以下情况报错，可能因为系统缺失相关DLL库导致的问题，此情况多发生在windows server系统。
