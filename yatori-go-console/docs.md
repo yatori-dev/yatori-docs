@@ -163,6 +163,28 @@ users:
 
 之后就就可以愉快的答题了，答题前请确保账号有足够额度答题，一般情况下新账号都有免费额度的。
 
+
+## 🚀 关于如何接入豆包大模型答题
+因为该软件目前支持OpenAI规范接入格式，所以只要适配了OpenAI对接API范式的模型都可以直接接入使用，豆包也是如此。（在使用前请确保AI账号有足够额度）
+
+1、第一步：
+* 接入豆包你需要先去[火山引擎平台](https://www.volcengine.com/activity/ark?utm_source=5&utm_medium=sem_bing&utm_term=sem_bing_damoxing19k9&utm_campaign=chanpin_2631&utm_content=bing_damoxing19k9&msclkid=d44ee1875c591fac648d893f776b9cd1)登录并获取API-KEY。
+
+2、登录好后去控制台获取API-KEY
+![alt text](./assets/img/download_26.png)
+复制好后填入config对应账号项的`API-KEY`里面
+![alt text](./assets/img/download_27.png)
+
+3、然后选择你想要对接的模型，然后选择API对接
+![alt text](./assets/img/download_28.png)
+![alt text](./assets/img/download_29.png)
+
+4、点击开通模型，然后选择复制对应模型然后粘贴到对应config文件内的model项里面即可。
+![alt text](./assets/img/download_30.png)
+![alt text](./assets/img/download_31.png)
+![alt text](./assets/img/download_32.png)
+好了，现在就可以正常使用豆包答题了。
+
 ## 🚀 关于如何接入Deepseek大模型答题
 因为该软件目前支持OpenAI规范接入格式，所以只要适配了OpenAI对接API范式的模型都可以直接接入使用，Deepseek也是如此。（在使用前请确保AI账号有足够额度）
 
