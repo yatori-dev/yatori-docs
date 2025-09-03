@@ -168,7 +168,7 @@ users:
 因为该软件目前支持OpenAI规范接入格式，所以只要适配了OpenAI对接API范式的模型都可以直接接入使用，豆包也是如此。（在使用前请确保AI账号有足够额度）
 
 1、第一步：
-* 接入豆包你需要先去[火山引擎平台](https://www.volcengine.com/activity/ark?utm_source=5&utm_medium=sem_bing&utm_term=sem_bing_damoxing19k9&utm_campaign=chanpin_2631&utm_content=bing_damoxing19k9&msclkid=d44ee1875c591fac648d893f776b9cd1)登录并获取API-KEY。
+* 接入豆包你需要先去[火山方舟平台](https://console.volcengine.com/ark/region:ark+cn-beijing/experience/chat?id=excs-202509032005-[3XpiSG5OcNLDT51PqYVD_])登录并获取API-KEY。
 
 2、登录好后去控制台获取API-KEY
 ![alt text](./assets/img/download_26.png)
