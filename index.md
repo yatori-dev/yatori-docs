@@ -12,6 +12,9 @@ hero:
     - theme: brand
       text: 介绍
       link: /introduction/docs
+    - theme: brand
+      text: 配置文件生成器
+      link: https://yatori-dev.github.io/yatori-config-generate/
     - theme: alt
       text: Yatori-go-console
       link: https://github.com/yatori-dev/yatori-go-console
