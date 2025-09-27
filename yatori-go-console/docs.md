@@ -283,8 +283,7 @@ users:
 * 若出现以下情况报错，可能因为系统缺失相关DLL库导致的问题，此情况多发生在windows server系统。
 
 ![](./assets/img/download_11.jpg)
-
-* 解决方法为使用DLL修复工具进行修复，如使用[4DDiG DLL Fixer](https://www.softjinzhou.com/)工具。
+* 出现此类报错可能是可能是缺少相关C++库VC_redist导致，一般下载[点击此处下载](https://aka.ms/vs/16/release/VC_redist.x64.exe)完对应库安装后就可解决。
 
 
 
