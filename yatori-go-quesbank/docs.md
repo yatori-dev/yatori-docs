@@ -15,7 +15,7 @@ yatori-go-quesbank是一个用于收集题库的工具，他搭配了ElasticSear
 之后我们会看到对应的下载文件，这里我们根据实际情况进行下载，其中带有linux字样的是linux系统使用的版本，带有windows字样的是windows系统使用的版本，请根据你所使用的系统点击相关条目进行下载，这里我已windows系统版本为例：
 ![alt text](./assets/img/2.png)
 
-下载好后，我们将其找个地方解压，解压后我们可以看到以下这三个文件，其中config为配置文件，这个使用过[yatori-go-console](https://github.com/yatori-dev/yatori-go-console)的同学应该都知道。然后就是start.bat文件，这个文件就是后续我们配置好后双击进行启动的文件。而yatori-go-quesbank.exe则是我们题库程序本体：
+下载好后，我们将其找个地方解压（请注意，解压的路径不要有中文！！！），解压后我们可以看到以下这三个文件，其中config为配置文件，这个使用过[yatori-go-console](https://github.com/yatori-dev/yatori-go-console)的同学应该都知道。然后就是start.bat文件，这个文件就是后续我们配置好后双击进行启动的文件。而yatori-go-quesbank.exe则是我们题库程序本体：
 ![alt text](./assets/img/3.png)
 
 ### 2.2 修改配置文件
@@ -113,7 +113,7 @@ setting:
 
 ### 3.1 配置Elasticsearch并启动
 首先，先去ElasticSearch官网下载，注意要下载9版本的，这里提供windows版本下载链接
-：[点击此处下载](https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-9.1.4-windows-x86_64.zip)。下载完后找个地方解压。
+：[点击此处下载](https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-9.1.4-windows-x86_64.zip)。下载完后找个地方解压。（注意解压的路径不要有中文！！！）
 
 
 解压完成后，进入`bin`目录，然后双击`elasticSearch.bat`启动Elasticsearch，此时可能会弹出网络访问请求，这个时候你点击运行就行。
