@@ -134,6 +134,51 @@ users:
       includeCourses: []
       excludeCourses: []
 ```
+
+## 🚀 智慧职教如何使用Cookie登录
+
+1、首先进入智慧职教首页，并点击进入[登录页面](https://sso.icve.com.cn/sso/auth?mode=simple&redirect=https%3A%2F%2Fwww.icve.com.cn%2Fpedding&source=25)。
+
+2、登录过后打开开发者工具,点击如下图按钮打开。
+![](./assets/img/download_33.png)
+
+3、然后调到网络选项栏，并`刷新`智慧职教网页。
+![](./assets/img/download_34.png)
+4、找到`index`页面数据，然后复制`Cookie`数据，智慧将其粘贴到配置文件的`password`字段中即可。
+![](./assets/img/download_35.png)
+
+```yaml
+setting:
+  basicSetting:
+    completionTone: 1
+    colorLog: 1
+    logOutFileSw: 1
+    logLevel: "INFO"
+    logModel: 0
+  aiSetting:
+    aiType: "TONGYI"
+    aiUrl: "" 
+    model: "" 
+    API_KEY: ""
+  apiQueSetting:
+    url: "http://localhost:8083"
+users:
+  - accountType: "ICVE"
+    url: ""
+    account: "账号"
+    password: "填写刚才复制的Cookie"
+    isProxy: 0
+    coursesCustom:
+      weLearnTime: 10-30
+      shuffleSw: 0
+      videoModel: 1
+      autoExam: 0
+    examAutoSubmit: 1
+    includeCourses: []
+    excludeCourses: []
+```
+
+
 ## 🚀 关于如何接入通义千问大模型答题
 因为该软件目前支持OpenAI规范接入格式，所以只要适配了OpenAI对接API范式的模型都可以直接接入使用，通义千问也是如此。
 
