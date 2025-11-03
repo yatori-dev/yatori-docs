@@ -5,6 +5,17 @@
 ## 1 关于yatori-go-quesbank
 yatori-go-quesbank是一个用于收集题库的工具，他搭配了ElasticSearch本地缓存以及AI答题以及三方题库等集成，拥有多样化的题目搜索功能，在一定程度上保证了答题的正确性以及题库采集和搜索机制。
 
+
+
+## 🎯 适配的题库：
+
+| 题库平台                |说明|
+| ----------------- | -----|
+| [言溪题库(付费题库)](https://tk.enncy.cn/)           |无|
+| [MAX题库(付费题库)](https://tkwz.xyz/)           |无|
+| [早点睡题库(付费题库)](tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=3585823091) |点击链接后加他QQ询问并获取题库token|
+
+
 ## 2 快速入门quesbank
 
 ### 2.1 下载quesbank项目
