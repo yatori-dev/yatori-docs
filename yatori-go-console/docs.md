@@ -54,8 +54,7 @@ Hello，欢迎来到yatori系列yatori-go-console，此项目采用GO语言开�
 2、将最主要的平台类型以及url链接和账号密码填写好之后保存（其他配置自行参考[配置文件填写说明](#🚀-配置文件填写说明)）
 ![](./assets/img/download_8.png)
 
-3、当然如果你任然不明白怎么填写，也可以使用配置文件生成器来根据你填写的表单自动生成配置文件[点击跳转配置文件生成器](https://yatori-dev.github.io/yatori-config-generate/)
-v
+3、当然如果你任然不明白怎么填写，也可以使用配置文件生成器来根据你填写的表单自动生成配置文件[点击跳转配置文件生成器](https://yatori-dev.github.io/yatori-config-generate/)，生成配置文件后点击`导出`按钮，然后将导出下载好的文件覆盖原来的`config`配置文件即可。
 
 ### 第四步启动yatori
 ![](./assets/img/download_9.png)
