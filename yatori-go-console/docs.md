@@ -179,8 +179,21 @@ users:
     excludeCourses: []
 ```
 
+## 🚀 如何接入AI自动答题
+支持的AI平台：
 
-## 🚀 关于如何接入通义千问大模型答题
+| 平台              |  
+| ----------------- | 
+| [硅基流动](https://cloud.siliconflow.cn)          | 
+| [DeepSeek](https://platform.deepseek.com/usage)           | 
+| [通义千问](https://bailian.console.aliyun.com)           | 
+| [豆包](https://console.volcengine.com)          | 
+| [MetaAI](https://metaso.cn/search-api/playground)     | 
+| [智普清言](https://open.bigmodel.cn/console/overview)    |
+| [星火大模型](https://console.xfyun.cn/services/bm35) | 
+| [ChatGPT(OpenAI)](https://platform.openai.com/docs/quickstart) | 
+
+### 关于如何接入通义千问大模型答题
 因为该软件目前支持OpenAI规范接入格式，所以只要适配了OpenAI对接API范式的模型都可以直接接入使用，通义千问也是如此。
 
 1、第一步：
@@ -215,7 +228,7 @@ users:
 之后就就可以愉快的答题了，答题前请确保账号有足够额度答题，一般情况下新账号都有免费额度的。
 
 
-## 🚀 关于如何接入豆包大模型答题
+### 关于如何接入豆包大模型答题
 因为该软件目前支持OpenAI规范接入格式，所以只要适配了OpenAI对接API范式的模型都可以直接接入使用，豆包也是如此。（在使用前请确保AI账号有足够额度）
 
 1、第一步：
@@ -236,7 +249,7 @@ users:
 ![alt text](./assets/img/download_32.png)
 好了，现在就可以正常使用豆包答题了。
 
-## 🚀 关于如何接入Deepseek大模型答题
+### 关于如何接入Deepseek大模型答题
 因为该软件目前支持OpenAI规范接入格式，所以只要适配了OpenAI对接API范式的模型都可以直接接入使用，Deepseek也是如此。（在使用前请确保AI账号有足够额度）
 
 1、第一步：
