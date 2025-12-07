@@ -63,6 +63,35 @@ Hello，欢迎来到yatori系列yatori-go-console，此项目采用GO语言开�
 如果出现以下大概内容说明成功启动了，之后你只需要挂着就行
 ![](./assets/img/download_10.png)
 
+## 🚀 Docker版本使用说明(基于Linux)
+
+1.第一步先下载Docker，这一步应该就不用说了。（网上一堆教程）
+
+2.第二步拉取最新Docker镜像(如何拉取，见下图)。
+![](./assets/img/download_36.jpg)
+点击下图中的按钮复制对应的Docker指令然后去你的linux中进行拉取最新镜像。
+![](./assets/img/download_37.jpg)
+拉取完成后是使用`docker images`指令查看镜像是否正常拉取到了,如果拉取成功应该会在列表中看到有以下镜像显示。
+![](./assets/img/download_38.jpg)
+3.复制你编辑好的`config`配置文件，将配置文件丢到你想要放的地方（这里我丢到了`~/yatori目录下`），如下图所示。
+![](.\assets\img\PixPin_2025-12-07_17-07-42.jpg)
+4.然后以挂载目录的方式启动容器，指令如下：
+```sh
+docker run -it --rm -v [挂载的宿主机路径]:/app [对应刚才截图中的IMAGE ID]
+```
+比如根据上图，我应该是:
+```sh
+docker run -it --rm -v ~/yatori:/app 480f24471817
+```
+如下图所示则代表我们运行成功了：
+![](.\assets\img\PixPin_2025-12-07_17-11-43.jpg)
+如果想后台运行容器则加上参数`-d`即可：
+```sh
+docker run -d -it --rm -v ~/yatori:/app 480f24471817
+```
+
+
+
 ## 🚀 配置文件填写说明
 ::: tip
 注意，配置文件为config.yaml文件，此文件必须要与yatori-go-console在相同目录下才可让程序正常读取到
