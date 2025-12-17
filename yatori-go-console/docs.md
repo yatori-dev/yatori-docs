@@ -90,6 +90,15 @@ docker run -it --rm -v ~/yatori:/app 480f24471817
 docker run -d -it --rm -v ~/yatori:/app 480f24471817
 ```
 
+## 🚀 安卓手机如何使用yatori-go-console
+
+1.第一步，在`yatori-go-console`的`release`下载页面下载对应`termux`版本，然后发送到手机。
+
+2.利用MT管理器将`yatori-go-console`移动到你的`termux`中，然后解压。
+
+3.解压后将`yatori-go-console`文件利用指令`chmod 777 yatori-go-consoole`修改运行权限。
+
+4.按照要求修改`config.yaml`配置文件，然后使用`./yatori-go-console`指令启动即可。
 
 
 ## 🚀 配置文件填写说明
