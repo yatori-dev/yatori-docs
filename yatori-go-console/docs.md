@@ -91,14 +91,49 @@ docker run -d -it --rm -v ~/yatori:/app 480f24471817
 ```
 
 ## 🚀 安卓手机如何使用yatori-go-console
+### 1.从网上拉取最新的Release
 
-1.第一步，在`yatori-go-console`的`release`下载页面下载对应`termux`版本，然后发送到手机。
+- 获取最新的版本号:
 
-2.利用MT管理器将`yatori-go-console`移动到你的`termux`中，然后解压。
+```
+LATEST_VERSION=$(curl -s https://api.github.com/repos/yatori-dev/yatori-go-console/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+```
 
-3.解压后将`yatori-go-console`文件利用指令`chmod 777 yatori-go-consoole`修改运行权限。
+- 输出最新的版本号:
 
-4.按照要求修改`config.yaml`配置文件，然后使用`./yatori-go-console`指令启动即可。
+```
+echo "检测到最新版本: $LATEST_VERSION"
+```
+
+- 尝试下载最新的版本号:
+
+```
+wget https://github.com/yatori-dev/yatori-go-console/releases/latest/download/yatori-go-console.$LATEST_VERSION-termux-arm64-release.tar.gz
+```
+
+（tips:如果网络环境不好，可尝试在url前面加上https://gh-proxy.org/）
+
+### 2.解压Release
+
+```
+tar -zxvf yatori(Tab键补全然后回车)
+```
+
+### 3.进入目录修改config.yaml
+
+```
+cd yatori(依旧Tab补全)
+
+vim config.yaml
+```
+
+### 4.运行yatori
+
+```
+./yatori-go-console
+```
+
+
 
 
 ## 🚀 配置文件填写说明
