@@ -379,6 +379,13 @@ users:
 ![alt text](assets/img/PixPin_2026-02-10_19-24-51.jpg)
 ![alt text](assets/img/PixPin_2026-02-10_19-23-47.jpg)
 
+常见免费代理服务提供商：
+[谷德免费代理](https://www.goodips.com/?protocol=HTTPS&page=1&size=15)
+[站大爷](https://www.zdaye.com/free/)
+[快代理](https://www.kuaidaili.com/free/)
+[积流代理](https://www.jiliuip.com/free/)
+
+
 ## ❓ 关于报错Platform-specific initialization failed解决
 * 若出现以下情况报错，可能因为系统缺失相关DLL库导致的问题，此情况多发生在windows server系统。
 
