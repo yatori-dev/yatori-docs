@@ -335,9 +335,9 @@ users:
 
 ![](./assets/img/download_21.png)
 
-然后在同yatori的exe文件同目录下创建ip.txt文件，并且在里面填写对应代理url
+然后在同yatori的exe文件同目录下创建ip.txt文件，并且在里面填写对应代理ip:port，注意代理`必须`要支持`https`
 
-![](./assets/img/download_22.png)
+![alt text](assets/img/PixPin_2026-02-10_19-11-26.jpg)
 
 之后再在对应用户配置下`ipProxy`开启IP代理设置即可
 
@@ -374,9 +374,10 @@ users:
 
 ### 使用网上的代理IP
 
-使用网上的ip代理也是一样的操作，只需要改变ip.txt里面的代理url即可,之后直接开启`isPorxy`然后启动`start.bat`
+使用网上的ip代理也是一样的操作，只需要改变ip.txt里面的代理`ip:port`即可,之后直接开启`isPorxy`然后启动`start.bat`，注意代理`必须`要支持`https`。
 
-![](./assets/img/download_23.png)
+![alt text](assets/img/PixPin_2026-02-10_19-24-51.jpg)
+![alt text](assets/img/PixPin_2026-02-10_19-23-47.jpg)
 
 ## ❓ 关于报错Platform-specific initialization failed解决
 * 若出现以下情况报错，可能因为系统缺失相关DLL库导致的问题，此情况多发生在windows server系统。
