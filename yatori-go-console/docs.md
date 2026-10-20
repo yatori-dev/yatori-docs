@@ -19,15 +19,15 @@ Hello，欢迎来到yatori系列yatori-go-console，此项目采用GO语言开�
 | 大学生网络党校（ENAEA） | 支持暴力模式（倍速刷）                | 已完成 ✅    |
 | 中小学网络党校（ENAEA） | 支持暴力模式（倍速刷）                | 已完成 ✅    |
 | 学习通            | 支持绕过人脸认证，支持暴力模式（暴力模式大概率打回） | 已完成 ✅    |
+| 海旗科技（HQKJ）    | 支持秒刷，作业/考试支持 AI 答题与内置标答答题 | 已完成 ✅    |
 | 码上研训           | 默认秒刷                       | 已完成 ✅    |
 | 青书学堂           | 只支持普通模式                       | 已完成 ✅    |
-| MOOC        | 无                          | 开发中 🚧    |
-| 智慧树            | 无                                     | 开发中 🚧    |
-| 学习公社（TTCDW） | 无                                     | 开发中 🚧    |
-| 工学云打卡        | （Core已完成待整合）                   | 完成度80% 🚧 |
+| MOOC        | 无                          | 无限延期 🚧    |
+| 智慧树            | 无                                     | 无限延期 🚧    |
+| 学习公社（TTCDW） | 无                                     | 无限延期 🚧    |
 
 ::: tip
-其中`已完成 ✅`指标已最基础的支持视屏学习为基准，`开发中 🚧`代表正在开发中...
+其中`已完成 ✅`指标已最基础的支持视频学习为基准，`开发中 🚧`代表正在开发中...
 :::
 
 
@@ -74,7 +74,7 @@ Hello，欢迎来到yatori系列yatori-go-console，此项目采用GO语言开�
 拉取完成后是使用`docker images`指令查看镜像是否正常拉取到了,如果拉取成功应该会在列表中看到有以下镜像显示。
 ![](./assets/img/download_38.jpg)
 3.复制你编辑好的`config`配置文件，将配置文件丢到你想要放的地方（这里我丢到了`~/yatori目录下`），如下图所示。
-![](.\assets\img\PixPin_2025-12-07_17-07-42.jpg)
+![](./assets/img/PixPin_2025-12-07_17-07-42.jpg)
 4.然后以挂载目录的方式启动容器，指令如下：
 ```sh
 docker run -it --rm -v [挂载的宿主机路径]:/app [对应刚才截图中的IMAGE ID]
@@ -84,7 +84,7 @@ docker run -it --rm -v [挂载的宿主机路径]:/app [对应刚才截图中的
 docker run -it --rm -v ~/yatori:/app 480f24471817
 ```
 如下图所示则代表我们运行成功了：
-![](.\assets\img\PixPin_2025-12-07_17-11-43.jpg)
+![](./assets/img/PixPin_2025-12-07_17-11-43.jpg)
 如果想后台运行容器则加上参数`-d`即可：
 ```sh
 docker run -d -it --rm -v ~/yatori:/app 480f24471817
@@ -112,22 +112,22 @@ setting:
     colorLog: 1 #是否开启彩色日志，0为关闭，1为开启，如果控制台乱码可以尝试改为0关闭
     logOutFileSw: 1 #是否开启日志文件输出，0为关闭，1为开启
     logLevel: "INFO" #日志类型，一般INFO即可
-    logModel: 0 #日志输出模式，0为以视屏提交学时为单位进行日志输出，1为以课程信息为单位进行输出
-    ipProxySw: 0 #是否开启IP代理，0代表关闭，1代表开启，开启后一定要子当前启动目录下创建ip.txt这个ip池文件，里面填写对应的代理IP即可，一行一个。注意，代理的IP一定要支持Https
+    logModel: 0 #日志输出模式，0为以视频提交学时为单位进行日志输出，1为以课程信息为单位进行输出
   aiSetting:
     aiType: "TONGYI" #智普：CHATGLM、星火：XINGHUO、通义千问：TONGYI、豆包：DOUBAO、其他模型：OTHER
     aiUrl: "" #默认不填，除非你用的不是上面所指明的AI模型，比如ChatGPT
     model: "" #AI模型，不填则使用yatori默认选择的模型，如果你用的豆包则必填并且填的是接入点ID非模型名称，比如ep-2024xxxxx
     API_KEY: "" #AI平台对应的apikey
 users:
-  - accountType: "YINGHUA" #平台类型，英华学堂：YINGHUA、仓辉：CANGHUI、学习公社：ENAEA、学习通：XUEXITONG、重庆工业学院：CQIE
-    url: "url" #对应平台的url链接,学习公社、CQIE、学习通可以不用填且可以直接把这一行去掉
+  - accountType: "YINGHUA" #平台类型，英华学堂：YINGHUA、仓辉：CANGHUI、学习公社：ENAEA、学习通：XUEXITONG、重庆工业学院：CQIE、智慧职教：ICVE、随行课堂：WELEARN、青书学堂：QSXT、码上研训：KETANGX、海旗科技：HQKJ
+    url: "url" #对应平台的url链接，英华学堂、海旗科技必填；学习公社、CQIE、学习通可以不用填且可以直接把这一行去掉
     account: "账号" #账号
     password: "密码" #密码
+    isProxy: 0 #是否开启该账号IP代理，0为关闭，1为开启（开启后需在同目录创建ip.txt，一行一个代理地址）
     coursesCustom:
       cxNode: 3 # 这个是在学习通下videoModel模式为3时才会生效，代表多任务点模式下同时进行多少个任务点一起学，如果填写-1则表示所有任务点同时一起学（学习通多任务点模式请谨慎使用）
-      videoModel: 1 #刷视屏模式，0代表不刷，1代表普通模式，2代表暴力模式
-      autoExam: 0 #是否自动考试，0代表不考试，1代表考试
+      videoModel: 1 #刷视频模式，0代表不刷，1代表普通模式，2代表暴力模式
+      autoExam: 0 #自动答题模式：0=不答题，1=AI答题，2=外置题库答题（海旗为内置标答答题），3=学习通内置AI
       examAutoSubmit: 1 #是否考完试自动提交试卷，0代表不自动提交，1代表自动提交
       includeCourses: []  #include和exclude填一个即可，include代表只有这里面的课程才刷，填课程名称，比如["xxxx","xxxx"]，学习公社填必修课程或者选修课程等
       excludeCourses: []  #include和exclude填一个即可，exclude代表除了这里面的课程其他都刷，填课程名称，比如["xxxx","xxxx"]，学习公社填必修课程或者选修课程等
@@ -147,7 +147,6 @@ setting:
     logOutFileSw: 1
     logLevel: "INFO"
     logModel: 0
-    ipProxySw: 0
   aiSetting:
     aiType: "TONGYI"
     aiUrl: ""
@@ -159,7 +158,7 @@ users:
     account: "123456"
     password: "114514"
     coursesCustom:
-      videoModel: 1 # 开启视屏学习
+      videoModel: 1 # 开启视频学习
       autoExam: 0 # 关闭AI答题
       examAutoSubmit: 1 # 自动提交试卷
       includeCourses: []
@@ -168,7 +167,7 @@ users:
     account: "1888282231" # CQIE和学习公社可以不用url
     password: "114514"
     coursesCustom:
-      videoModel: 1 # 开启视屏学习
+      videoModel: 1 # 开启视频学习
       autoExam: 0
       examAutoSubmit: 1 # 自动提交试卷
       includeCourses: []
@@ -209,13 +208,13 @@ users:
     password: "填写刚才复制的Cookie"
     isProxy: 0
     coursesCustom:
-      weLearnTime: 10-30
+      studyTime: 10-30
       shuffleSw: 0
       videoModel: 1
       autoExam: 0
-    examAutoSubmit: 1
-    includeCourses: []
-    excludeCourses: []
+      examAutoSubmit: 1
+      includeCourses: []
+      excludeCourses: []
 ```
 
 ## 🚀 如何接入AI自动答题
@@ -307,7 +306,6 @@ setting:
     logOutFileSw: 1
     logLevel: "INFO"
     logModel: 0 
-    ipProxySw: 0 
   aiSetting:
     aiType: "OTHER" # Deepseek的话填OTHER
     aiUrl: "https://api.deepseek.com/chat/completions" # 这条固定写法
@@ -326,6 +324,58 @@ users:
 ```
 
 
+### 关于海旗科技（HQKJ）如何自动答题
+
+海旗科技（HQKJ）在视频秒刷的基础上，支持作业和考试的自动答题。海旗的答题模式由 `autoExam` 区分：
+
+| autoExam | 模式 | 说明 |
+| --- | --- | --- |
+| 0 | 不答题 | 只刷视频 |
+| 1 | AI 答题 | 优先使用平台随题返回的内置标答，缺失时才调用 AI 补答 |
+| 2 | 内置标答答题 | 只使用平台随题返回的内置标答自动填写并提交，完全不调用 AI |
+
+使用说明：
+
+- 海旗账号必须填写 `url`，值为学校平台域名，例如 `https://xxx.haiqikeji.com`；
+- 作业和考试会在视频学习结束后一并处理，不需要额外开关；
+- 同一作业/考试只会处理一次；已完成的会自动跳过，进行中的考试可以继续作答；
+- 是否自动交卷由 `examAutoSubmit` 控制：`1` 为答完自动交卷，`0` 为只提交答案不交卷；
+- 内置标答模式不依赖 `aiSetting`，无需配置 AI 和 `API_KEY`；没有返回标答的题目会自动跳过并在日志中提示；
+- AI 答题模式建议先确认 AI 可用且额度充足；平台有标答时会优先使用标答，不会逐题调用 AI（启动时仍会做一次 AI 可用性检测）。
+
+AI 答题配置示例（`autoExam: 1`）：
+
+```yaml
+users:
+  - accountType: "HQKJ" # 海旗科技
+    url: "https://xxx.haiqikeji.com" # 学校平台域名，必填
+    account: "账号"
+    password: "密码"
+    coursesCustom:
+      videoModel: 2 # 海旗秒刷模式
+      autoExam: 1 # AI答题：平台有标答时优先用标答，缺失才调用AI
+      examAutoSubmit: 1 # 1=答完自动交卷，0=只提交不交卷
+      includeCourses: []
+      excludeCourses: []
+```
+
+内置标答答题配置示例（`autoExam: 2`，无需 AI 配置）：
+
+```yaml
+users:
+  - accountType: "HQKJ"
+    url: "https://xxx.haiqikeji.com"
+    account: "账号"
+    password: "密码"
+    coursesCustom:
+      videoModel: 2
+      autoExam: 2 # 仅使用平台内置标答，不调用AI
+      examAutoSubmit: 1
+      includeCourses: []
+      excludeCourses: []
+```
+
+
 ## 🚀 关于如何启用IP代理服务
 
 ### 使用自己的机场代理
@@ -337,9 +387,9 @@ users:
 
 然后在同yatori的exe文件同目录下创建ip.txt文件，并且在里面填写对应代理ip:port，注意代理`必须`要支持`https`
 
-![alt text](assets/img/PixPin_2026-02-10_19-11-26.jpg)
+![alt text](./assets/img/PixPin_2026-02-10_19-11-26.jpg)
 
-之后再在对应用户配置下`ipProxy`开启IP代理设置即可
+之后再在对应用户配置下将 `isProxy` 设为 `1` 开启IP代理（`0` 为关闭）
 
 ```yaml
 setting:
@@ -374,10 +424,10 @@ users:
 
 ### 使用网上的代理IP
 
-使用网上的ip代理也是一样的操作，只需要改变ip.txt里面的代理`ip:port`即可,之后直接开启`isPorxy`然后启动`start.bat`，注意代理`必须`要支持`https`。
+使用网上的ip代理也是一样的操作，只需要改变ip.txt里面的代理`ip:port`即可,之后直接开启`isProxy`然后启动`start.bat`，注意代理`必须`要支持`https`。
 
-![alt text](assets/img/PixPin_2026-02-10_19-24-51.jpg)
-![alt text](assets/img/PixPin_2026-02-10_19-23-47.jpg)
+![alt text](./assets/img/PixPin_2026-02-10_19-24-51.jpg)
+![alt text](./assets/img/PixPin_2026-02-10_19-23-47.jpg)
 
 常见免费代理服务提供商：
 [谷德免费代理](https://www.goodips.com/?protocol=HTTPS&page=1&size=15)
