@@ -2,39 +2,86 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Yatori-Docs",
-  description: "This is a yatori-docs",
+  lang: 'zh-CN',
+  title: 'Yatori-Docs',
+  description: 'Yatori 系列使用文档与开发文档',
   base: '/yatori-docs/',
   head: [
-    ['link',{rel:'icon',href:'/img/logo.png'}]
+    ['link', { rel: 'icon', href: '/yatori-docs/img/logo.png' }]
   ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Yatori-go-console Docs', link: '/yatori-go-console/docs' },
-      { text: 'Yatori-go-core Docs', link: '/yatori-go-core/docs' },
+      { text: '首页', link: '/' },
+      { text: '控制台', link: '/yatori-go-console/docs' },
       {
-        text: 'Other',
+        text: 'Core V2',
+        activeMatch: '/yatori-go-core/',
+        items: [
+          { text: '使用教程', link: '/yatori-go-core/docs' },
+          { text: '开发手册', link: '/yatori-go-core/dev/' }
+        ]
+      },
+      {
+        text: '其他',
         items: [
           { text: 'Yatori-go-quesbank Docs', link: '/yatori-go-quesbank/docs' },
-          {
-            text: '题库对接文档',
-            link: '/bank-interface-api/docs'
-          }
+          { text: '题库对接文档', link: '/bank-interface-api/docs' }
         ]
       }
     ],
     sidebar: {
-      '/yatori-go-console/': [
-        // {
-        //   text: 'Yatori-go-console',
-        //   items: [
-        //     {text: '关于', link: '/yatori-go-console/about'},
-        //     {text: '配置文件说明', link: '/yatori-go-console/configexplain'}
-        //   ]
-        // }
+      '/yatori-go-core/': [
+        {
+          text: '开始使用',
+          items: [
+            { text: '教程目录', link: '/yatori-go-core/v2/' },
+            { text: 'V2 总览', link: '/yatori-go-core/docs' },
+            { text: '快速开始', link: '/yatori-go-core/v2/getting-started' }
+          ]
+        },
+        {
+          text: '核心概念',
+          items: [
+            { text: 'Client API', link: '/yatori-go-core/v2/client-api' },
+            { text: '数据模型', link: '/yatori-go-core/v2/models' },
+            { text: '能力与错误', link: '/yatori-go-core/v2/capabilities' },
+            { text: '会话与持久化', link: '/yatori-go-core/v2/session' }
+          ]
+        },
+        {
+          text: '平台',
+          items: [
+            { text: '平台说明', link: '/yatori-go-core/v2/platforms' }
+          ]
+        },
+        {
+          text: '进阶',
+          items: [
+            { text: 'AI 与题库', link: '/yatori-go-core/v2/ai-and-question-bank' },
+            { text: '动态调用', link: '/yatori-go-core/v2/dynamic-call' },
+            { text: '完整示例', link: '/yatori-go-core/v2/examples' },
+            { text: 'V1 迁移 V2', link: '/yatori-go-core/v2/migration-v1-to-v2' },
+            { text: '常见问题', link: '/yatori-go-core/v2/faq' }
+          ]
+        },
+        {
+          text: '开发手册',
+          items: [
+            { text: '开发手册总览', link: '/yatori-go-core/dev/' },
+            { text: '架构与分层', link: '/yatori-go-core/dev/architecture' },
+            { text: '新增平台教程', link: '/yatori-go-core/dev/new-platform' },
+            { text: 'Adapter API 规范', link: '/yatori-go-core/dev/adapter-api' },
+            { text: '数据映射规范', link: '/yatori-go-core/dev/data-mapping' },
+            { text: '错误与能力位', link: '/yatori-go-core/dev/errors-and-capabilities' },
+            { text: '测试与验收', link: '/yatori-go-core/dev/testing' },
+            { text: '代码风格与 PR', link: '/yatori-go-core/dev/style-and-pr' },
+            { text: '开发常见坑', link: '/yatori-go-core/dev/faq' }
+          ]
+        }
       ]
+      // 控制台文档侧边栏暂不启用，保留原有单页入口
+      // '/yatori-go-console/': []
     },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/yatori-dev' }
