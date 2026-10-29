@@ -1,6 +1,6 @@
-# V1 迁移 V2
+# V2 迁移 V3
 
-V2 是一次结构性重构，不是简单加几个函数。最重要的变化是：
+V3 是一次结构性重构，不是简单加几个函数。最重要的变化是：
 
 - 旧的 `api/*`、`aggregation/*` 已移动到 `internal/`，**外部项目不能再直接导入**；
 - 根包变成 `package yatori`，统一入口是 `yatori.New(...)`；
@@ -28,7 +28,7 @@ if err := xuexitong.XueXiTLoginAction(cache); err != nil {
 }
 ```
 
-V2：
+V3：
 
 ```go
 import "github.com/yatori-dev/yatori-go-core"
@@ -58,7 +58,7 @@ V1：
 courses, err := xuexitong.XueXiTPullCourseAction(cache)
 ```
 
-V2：
+V3：
 
 ```go
 courses, err := client.Courses(ctx)
@@ -73,7 +73,7 @@ key, _ := strconv.Atoi(course.Key)
 chapters, _, err := xuexitong.PullCourseChapterAction(cache, course.Cpi, key)
 ```
 
-V2：
+V3：
 
 ```go
 nodes, err := client.Tree(ctx, course)
@@ -87,7 +87,7 @@ V1：
 xuexitong.VideoSubmitStudyTimeAction(cache, &videoDTO, playingTime, mode, isdrag)
 ```
 
-V2：
+V3：
 
 ```go
 client.Study(ctx, yatori.StudyRequest{
@@ -110,7 +110,7 @@ question.WriteQuestionForAIAction(cache, aiUrl, model, aiType, apiKey)
 question.SubmitWorkAnswerAction(cache, true)
 ```
 
-V2：
+V3：
 
 ```go
 works, _ := client.Works(ctx, course)
@@ -134,7 +134,7 @@ question.WriteQuestionForAIAction(cache, aiUrl, model, aiType, apiKey)
 question.SubmitExamAnswerAction(cache, true)
 ```
 
-V2：
+V3：
 
 ```go
 exams, _ := client.Exams(ctx, course)
@@ -148,7 +148,7 @@ client.DoExam(ctx, yatori.ExamRequest{
 
 ## 2. 类型映射
 
-| V1 类型 | V2 类型 |
+| V2 类型 | V3 类型 |
 |---|---|
 | `xuexitong.XueXiTCourse` | `yatori.Course` |
 | `yinghua.YingHuaCourse` | `yatori.Course` |
@@ -172,7 +172,7 @@ users:
     password: "PASSWORD"
 ```
 
-V2 不再强制读取 YAML。你可以从任意来源构造：
+V3 不再强制读取 YAML。你可以从任意来源构造：
 
 ```go
 cfg := yatori.Config{
@@ -196,7 +196,7 @@ cfg := yatori.Config{
 
 ## 4. 控制台（yatori-go-console）迁移
 
-`yatori-go-console` 是独立模块，**不能导入本模块的 `internal/`**。V2 之后它必须改用根包 `yatori`：
+`yatori-go-console` 是独立模块，**不能导入本模块的 `internal/`**。V3 之后它必须改用根包 `yatori`：
 
 ```go
 // 旧代码
@@ -221,7 +221,7 @@ import "github.com/yatori-dev/yatori-go-core"
 
 ## 5. 行为差异
 
-| 项目 | V1 | V2 |
+| 项目 | V2 | V3 |
 |---|---|---|
 | `Study` | 各平台函数签名不同 | 统一 `StudyRequest`，粒度由平台决定 |
 | 错误 | 大量返回裸 JSON 字符串 | 哨兵错误 + `*yatori.Error` |
@@ -251,7 +251,7 @@ import "github.com/yatori-dev/yatori-go-core"
 
 ### `undefined: global.Config`
 
-V2 不依赖全局配置。把配置显式传给 `yatori.New`。
+V3 不依赖全局配置。把配置显式传给 `yatori.New`。
 
 ### `client.Works` 返回 `ErrUnsupported`
 

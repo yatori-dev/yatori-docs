@@ -19,7 +19,7 @@ if errors.Is(err, yatori.ErrUnsupported) {
 - `Capabilities()`：调用前预判，告诉你平台实现了哪些能力；
 - `ErrUnsupported`：调用后兜底，确认平台确实不支持。
 
-两者配合使用，详见 [能力与错误](/yatori-go-core/v2/capabilities)。
+两者配合使用，详见 [能力与错误](/yatori-go-core/v3/capabilities)。
 
 ### `Capabilities()` 能判断当前账号有没有作业吗？
 
@@ -58,7 +58,7 @@ Account: yatori.Account{
 },
 ```
 
-支持情况见 [平台说明](/yatori-go-core/v2/platforms)。
+支持情况见 [平台说明](/yatori-go-core/v3/platforms)。
 
 ### 智慧树为什么不能 `Login`？
 
@@ -98,7 +98,7 @@ session, _ := qr.WaitQRCode(ctx, token)
 
 ### 学习通的直播/讨论节点为什么返回 `ErrUnsupported`？
 
-V2 目前只统一了视频、音频、文档、外链等主要节点。直播/讨论的接口差异较大，尚未纳入统一 `Study`，后续版本会补齐。
+V3 目前只统一了视频、音频、文档、外链等主要节点。直播/讨论的接口差异较大，尚未纳入统一 `Study`，后续版本会补齐。
 
 ## 作业与考试
 
@@ -168,7 +168,7 @@ Options: yatori.Options{
 },
 ```
 
-`Type` 可用值见 [快速开始](/yatori-go-core/v2/getting-started#_5-4-ai-配置)。
+`Type` 可用值见 [快速开始](/yatori-go-core/v3/getting-started#_5-4-ai-配置)。
 
 ### 外部题库怎么接？
 

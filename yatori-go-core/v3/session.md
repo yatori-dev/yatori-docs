@@ -1,6 +1,6 @@
 # 会话与持久化
 
-登录之后，平台会返回 Cookie、Token 或其他会话凭据。V2 用 `Session` 统一表示这些信息。
+登录之后，平台会返回 Cookie、Token 或其他会话凭据。V3 用 `Session` 统一表示这些信息。
 
 ## Session 结构
 
@@ -47,7 +47,7 @@ fmt.Println(session.Token)
 | QSXT | token | `LoginWithCookie`（传 token） |
 | 其他 | 账号密码 | `Login` |
 
-统一入口都是 `Account.Cookie` 或 `LoginWithCookie`，具体格式见 [平台说明](/yatori-go-core/v2/platforms)。
+统一入口都是 `Account.Cookie` 或 `LoginWithCookie`，具体格式见 [平台说明](/yatori-go-core/v3/platforms)。
 
 ## 保存会话
 

@@ -1,6 +1,6 @@
 # 架构与分层
 
-理解分层是开发 core 的第一步。V2 的目标是：**公开面稳定、平台实现可替换、旧代码可复用**。
+理解分层是开发 core 的第一步。V3 的目标是：**公开面稳定、平台实现可替换、旧代码可复用**。
 
 ## 目录结构
 
@@ -252,7 +252,7 @@ yatori: <PLATFORM>: new: no adapter registered for platform
 | `config/global/common` | ⚠️ | 兼容保留，Deprecated |
 
 ::: warning 为什么适配器必须放在 internal
-适配器会直接依赖旧 `api` / `aggregation`。如果把它们公开，外部用户会绕过 `Client` 直接调用，导致 V2 的统一接口失去意义，也会让后续重构变得困难。
+适配器会直接依赖旧 `api` / `aggregation`。如果把它们公开，外部用户会绕过 `Client` 直接调用，导致 V3 的统一接口失去意义，也会让后续重构变得困难。
 :::
 
 ## 新增平台时应该改哪些文件
@@ -265,14 +265,14 @@ yatori: <PLATFORM>: new: no adapter registered for platform
 | `internal/driver/driver.go` | ✅ | 空导入注册 |
 | `yatori_test.go` | ✅ | 构造函数 smoke test |
 | `README.md` | ✅ | 平台能力表 |
-| `yatori-docs` 的 `docs.md` / `v2/platforms.md` / `v2/capabilities.md` | ✅ | 文档 |
+| `yatori-docs` 的 `docs.md` / `v3/platforms.md` / `v3/capabilities.md` | ✅ | 文档 |
 | `internal/api/<name>` / `internal/aggregation/<name>` | 按需 | 只有旧代码不存在时才新增 |
 
 ## 设计取舍
 
 ### 为什么适配器不直接返回平台类型？
 
-因为调用方不想为每个平台写一套类型断言。统一模型是 V2 的核心价值。
+因为调用方不想为每个平台写一套类型断言。统一模型是 V3 的核心价值。
 
 ### 为什么保留 `Raw`？
 
@@ -280,7 +280,7 @@ yatori: <PLATFORM>: new: no adapter registered for platform
 
 ### 为什么 `Study` 不做成自动完成？
 
-平台节奏、风控、验证码、人脸策略差异太大。V2 把节奏交给调用方，适配器只负责“一次学习动作”。
+平台节奏、风控、验证码、人脸策略差异太大。V3 把节奏交给调用方，适配器只负责“一次学习动作”。
 
 ### 为什么平台能力要用位图？
 

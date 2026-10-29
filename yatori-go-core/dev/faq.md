@@ -412,8 +412,8 @@ CI 默认不跑真实账号测试。
 
 - `README.md` 能力表；
 - `yatori-go-core/docs.md` 平台表；
-- `v2/platforms.md` 账号参数；
-- `v2/capabilities.md` 能力矩阵。
+- `v3/platforms.md` 账号参数；
+- `v3/capabilities.md` 能力矩阵。
 
 ---
 

@@ -129,9 +129,9 @@ type client struct {
 |---|---|
 | `README.md` | 平台能力表 |
 | `yatori-docs/yatori-go-core/docs.md` | 支持平台表 |
-| `yatori-docs/yatori-go-core/v2/platforms.md` | 账号参数、能力、注意事项 |
-| `yatori-docs/yatori-go-core/v2/capabilities.md` | 能力矩阵 |
-| `yatori-docs/yatori-go-core/v2/getting-started.md` | 新必填字段 |
+| `yatori-docs/yatori-go-core/v3/platforms.md` | 账号参数、能力、注意事项 |
+| `yatori-docs/yatori-go-core/v3/capabilities.md` | 能力矩阵 |
+| `yatori-docs/yatori-go-core/v3/getting-started.md` | 新必填字段 |
 | `yatori-docs/yatori-go-core/dev/new-platform.md` | 参考实现链接（可选） |
 
 文档要求：

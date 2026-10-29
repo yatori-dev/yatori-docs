@@ -1,6 +1,6 @@
 # Client API
 
-`yatori.Client` 是 V2 唯一的平台操作入口。所有平台适配器都实现同一个接口，所以业务代码不需要为每个平台写一套类型和分支。
+`yatori.Client` 是 V3 唯一的平台操作入口。所有平台适配器都实现同一个接口，所以业务代码不需要为每个平台写一套类型和分支。
 
 ```go
 type Client interface {
@@ -65,7 +65,7 @@ if client.Platform() == yatori.XueXiTong {
 
 ### `Capabilities() Capability`
 
-返回平台能力位图。详见 [能力与错误](/yatori-go-core/v2/capabilities)。
+返回平台能力位图。详见 [能力与错误](/yatori-go-core/v3/capabilities)。
 
 ```go
 caps := client.Capabilities()
@@ -288,7 +288,7 @@ for {
 ```
 
 ::: tip 为什么不做成自动完成
-不同平台的节奏、风控、验证码、人脸策略不同。V2 把节奏交给调用方，避免一个通用循环把所有平台都按同一种频率请求。
+不同平台的节奏、风控、验证码、人脸策略不同。V3 把节奏交给调用方，避免一个通用循环把所有平台都按同一种频率请求。
 :::
 
 ## 作业
@@ -394,7 +394,7 @@ result, err := client.SignIn(ctx, yatori.SignInRequest{
 
 ### `Call(ctx, action, params) (any, error)`
 
-弱类型分发，适合配置驱动/JSON 场景。详见 [动态调用](/yatori-go-core/v2/dynamic-call)。
+弱类型分发，适合配置驱动/JSON 场景。详见 [动态调用](/yatori-go-core/v3/dynamic-call)。
 
 ```go
 result, err := client.Call(ctx, yatori.ActionCourses, nil)

@@ -1,16 +1,16 @@
-# Yatori-go-core V2 总览
+# Yatori-go-core V3 总览
 
-Yatori-go-core 是 yatori 系列的 Go 核心库。V2 把多个在线学习平台的登录、课程、章节、学习、作业、考试和签到能力收敛到**同一套公开接口**，第三方项目只需要导入根包 `yatori`，就可以通过同一组方法操作不同平台。
+Yatori-go-core 是 yatori 系列的 Go 核心库。V3 把多个在线学习平台的登录、课程、章节、学习、作业、考试和签到能力收敛到**同一套公开接口**，第三方项目只需要导入根包 `yatori`，就可以通过同一组方法操作不同平台。
 
-> V2 是仓库内部的重构版本，Go module 路径仍然是 `github.com/yatori-dev/yatori-go-core`，没有 `/v2` 后缀。
+> V3 是仓库内部的重构版本，Go module 路径仍然是 `github.com/yatori-dev/yatori-go-core`，没有 `/v3` 后缀。
 
-::: tip 一句话理解 V2
+::: tip 一句话理解 V3
 一个入口 `yatori.New(...)`，一个接口 `yatori.Client`，一套模型 `Course / Node / Work / Exam`；平台不支持的操作返回 `yatori.ErrUnsupported`。
 :::
 
-## V2 的核心变化
+## V3 的核心变化
 
-| 变化 | V2 的做法 |
+| 变化 | V3 的做法 |
 |---|---|
 | 公开入口 | 根包 `yatori`，例如 `yatori.New(...)` |
 | 平台差异 | 统一 `Client` 接口 + `Capabilities()` 能力位 |
@@ -98,17 +98,17 @@ func main() {
 
 | 文档 | 内容 |
 |---|---|
-| [快速开始](/yatori-go-core/v2/getting-started) | 安装、环境、第一个可运行程序、Options 配置 |
-| [Client API](/yatori-go-core/v2/client-api) | `Client` 每个方法的签名、参数、返回值和示例 |
-| [数据模型](/yatori-go-core/v2/models) | `Course`、`Node`、`Work`、`Exam`、`Session` 等字段说明 |
-| [能力与错误](/yatori-go-core/v2/capabilities) | `Capabilities()`、`ErrUnsupported`、平台能力矩阵 |
-| [会话与持久化](/yatori-go-core/v2/session) | Cookie/Token、会话保存与恢复、重登 |
-| [AI 与题库](/yatori-go-core/v2/ai-and-question-bank) | `AIConfig`、`QuestionBankConfig`、`AnswerSource` |
-| [平台说明](/yatori-go-core/v2/platforms) | 15 个平台的账号参数、能力和注意事项 |
-| [动态调用](/yatori-go-core/v2/dynamic-call) | `Call(action, params)` 的 Action 与参数表 |
-| [完整示例](/yatori-go-core/v2/examples) | 登录 → 课程 → 章节 → 学习 → 作业 → 考试 |
-| [V1 迁移 V2](/yatori-go-core/v2/migration-v1-to-v2) | 旧 `api`/`aggregation` 代码如何迁移 |
-| [常见问题](/yatori-go-core/v2/faq) | 登录、验证码、代理、AI、资源目录、并发等 |
+| [快速开始](/yatori-go-core/v3/getting-started) | 安装、环境、第一个可运行程序、Options 配置 |
+| [Client API](/yatori-go-core/v3/client-api) | `Client` 每个方法的签名、参数、返回值和示例 |
+| [数据模型](/yatori-go-core/v3/models) | `Course`、`Node`、`Work`、`Exam`、`Session` 等字段说明 |
+| [能力与错误](/yatori-go-core/v3/capabilities) | `Capabilities()`、`ErrUnsupported`、平台能力矩阵 |
+| [会话与持久化](/yatori-go-core/v3/session) | Cookie/Token、会话保存与恢复、重登 |
+| [AI 与题库](/yatori-go-core/v3/ai-and-question-bank) | `AIConfig`、`QuestionBankConfig`、`AnswerSource` |
+| [平台说明](/yatori-go-core/v3/platforms) | 15 个平台的账号参数、能力和注意事项 |
+| [动态调用](/yatori-go-core/v3/dynamic-call) | `Call(action, params)` 的 Action 与参数表 |
+| [完整示例](/yatori-go-core/v3/examples) | 登录 → 课程 → 章节 → 学习 → 作业 → 考试 |
+| [V2 迁移 V3](/yatori-go-core/v3/migration-v2-to-v3) | 旧 `api`/`aggregation` 代码如何迁移 |
+| [常见问题](/yatori-go-core/v3/faq) | 登录、验证码、代理、AI、资源目录、并发等 |
 
 ## 开发手册
 
@@ -145,12 +145,12 @@ func main() {
 | `yatori.GongXue` | 工学云 | 签到 |
 
 ::: warning 平台能力并不完全相同
-统一接口不代表每个平台都支持所有方法。调用前请先看 [能力与错误](/yatori-go-core/v2/capabilities)，或使用 `yatori.Supports(client, yatori.CapWorks)` 判断。
+统一接口不代表每个平台都支持所有方法。调用前请先看 [能力与错误](/yatori-go-core/v3/capabilities)，或使用 `yatori.Supports(client, yatori.CapWorks)` 判断。
 :::
 
 ## 下一步
 
-- 第一次使用：从 [快速开始](/yatori-go-core/v2/getting-started) 开始。
-- 已经用过旧版：直接看 [V1 迁移 V2](/yatori-go-core/v2/migration-v1-to-v2)。
-- 要做配置驱动或 Web 后端：看 [动态调用](/yatori-go-core/v2/dynamic-call)。
-- 要查某个平台怎么填账号：看 [平台说明](/yatori-go-core/v2/platforms)。
+- 第一次使用：从 [快速开始](/yatori-go-core/v3/getting-started) 开始。
+- 已经用过旧版：直接看 [V2 迁移 V3](/yatori-go-core/v3/migration-v2-to-v3)。
+- 要做配置驱动或 Web 后端：看 [动态调用](/yatori-go-core/v3/dynamic-call)。
+- 要查某个平台怎么填账号：看 [平台说明](/yatori-go-core/v3/platforms)。

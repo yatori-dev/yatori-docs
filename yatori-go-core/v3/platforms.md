@@ -3,7 +3,7 @@
 每个平台的账号参数、支持能力和注意事项都不同。这篇文档按平台列出最常见的问题。
 
 ::: tip 通用规则
-1. 先看 [能力与错误](/yatori-go-core/v2/capabilities) 确认平台支持哪些方法。
+1. 先看 [能力与错误](/yatori-go-core/v3/capabilities) 确认平台支持哪些方法。
 2. `Account.URL` 不是所有平台都需要；需要时通常要求填写**登录后的站点地址**。
 3. Cookie/Token 登录优先使用 `Account.Cookie`。
 4. 一个 `Client` 对应一个账号。

@@ -2,7 +2,7 @@
 
 ## 1. 错误模型
 
-V2 使用两层错误：
+V3 使用两层错误：
 
 1. **哨兵错误**：`ErrUnsupported`、`ErrNotLoggedIn`、`ErrInvalidArgument`、`ErrNotFound`；
 2. **结构化错误**：`*core.Error`，带平台、操作、错误码、底层错误。

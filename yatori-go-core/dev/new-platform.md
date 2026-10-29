@@ -904,9 +904,9 @@ go test -run '^$' ./...
 |---|---|
 | `README.md` | 平台能力表 |
 | `yatori-docs/yatori-go-core/docs.md` | 支持平台表 |
-| `yatori-docs/yatori-go-core/v2/platforms.md` | 账号参数、能力、注意事项 |
-| `yatori-docs/yatori-go-core/v2/capabilities.md` | 能力矩阵 |
-| `yatori-docs/yatori-go-core/v2/getting-started.md` | 如果有新的必填字段 |
+| `yatori-docs/yatori-go-core/v3/platforms.md` | 账号参数、能力、注意事项 |
+| `yatori-docs/yatori-go-core/v3/capabilities.md` | 能力矩阵 |
+| `yatori-docs/yatori-go-core/v3/getting-started.md` | 如果有新的必填字段 |
 | `yatori-docs/yatori-go-core/dev/new-platform.md` | 如果你的平台成为参考实现，补链接 |
 
 文档要写清楚：
@@ -945,11 +945,11 @@ go test -race ./core ./internal/driver/myplatform
 
 ## 18. 外部驱动/插件说明
 
-当前 V2 的适配器放在 `internal/driver`，外部模块**不能导入**。这意味着：
+当前 V3 的适配器放在 `internal/driver`，外部模块**不能导入**。这意味着：
 
 - 给官方 core 新增平台：请向本仓库提交 PR；
 - 维护自己的 fork：可以按本文步骤修改 fork；
-- 想做成独立 Go 模块/插件：当前 V2 没有公开的 driver 注册 API，需要先向维护者提案，增加公开的 driver/注册机制。
+- 想做成独立 Go 模块/插件：当前 V3 没有公开的 driver 注册 API，需要先向维护者提案，增加公开的 driver/注册机制。
 
 不要尝试从外部模块导入 `internal/driver`，Go 会直接拒绝。
 

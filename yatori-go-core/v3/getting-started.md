@@ -282,12 +282,12 @@ for _, account := range accounts {
 
 - 英华、海旗等平台必须填写 `Account.URL`，且要是登录后的站点地址。
 - 微伴必须填写 `Account.School`。
-- 智慧树使用扫码登录，见 [平台说明](/yatori-go-core/v2/platforms#智慧树-zhihuishu)。
-- 部分平台会在当前工作目录写入 `./assets`（验证码图片、辅助 exe、OCR 模型）。请确保运行目录可写，详见 [常见问题](/yatori-go-core/v2/faq#为什么运行目录会出现-assets-目录)。
-- 如果使用 Cookie/Token 登录，把值填到 `Account.Cookie`，并先确认该平台支持 Cookie 登录（见 [平台说明](/yatori-go-core/v2/platforms)）。
+- 智慧树使用扫码登录，见 [平台说明](/yatori-go-core/v3/platforms#智慧树-zhihuishu)。
+- 部分平台会在当前工作目录写入 `./assets`（验证码图片、辅助 exe、OCR 模型）。请确保运行目录可写，详见 [常见问题](/yatori-go-core/v3/faq#为什么运行目录会出现-assets-目录)。
+- 如果使用 Cookie/Token 登录，把值填到 `Account.Cookie`，并先确认该平台支持 Cookie 登录（见 [平台说明](/yatori-go-core/v3/platforms)）。
 
 ## 下一步
 
-- [Client API](/yatori-go-core/v2/client-api)：逐个方法说明。
-- [能力与错误](/yatori-go-core/v2/capabilities)：平台支持矩阵。
-- [完整示例](/yatori-go-core/v2/examples)：作业、考试、多账号。
+- [Client API](/yatori-go-core/v3/client-api)：逐个方法说明。
+- [能力与错误](/yatori-go-core/v3/capabilities)：平台支持矩阵。
+- [完整示例](/yatori-go-core/v3/examples)：作业、考试、多账号。

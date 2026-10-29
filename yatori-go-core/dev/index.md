@@ -7,7 +7,7 @@
 
 阅读完这本手册，你应该能够：
 
-- 理解 V2 的分层和依赖方向；
+- 理解 V3 的分层和依赖方向；
 - 按统一规范新增一个平台适配器；
 - 正确实现 `Client` 的每个方法；
 - 正确映射 `Course / Node / Work / Exam / Session`；
@@ -96,8 +96,8 @@
 
 建议先读一遍：
 
-- [V2 总览](/yatori-go-core/docs)
-- [Client API](/yatori-go-core/v2/client-api)
-- [能力与错误](/yatori-go-core/v2/capabilities)
+- [V3 总览](/yatori-go-core/docs)
+- [Client API](/yatori-go-core/v3/client-api)
+- [能力与错误](/yatori-go-core/v3/capabilities)
 
 然后从 [架构与分层](/yatori-go-core/dev/architecture) 开始。
