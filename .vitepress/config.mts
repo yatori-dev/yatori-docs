@@ -15,7 +15,7 @@ export default defineConfig({
       { text: '首页', link: '/' },
       { text: '控制台', link: '/yatori-go-console/docs' },
       {
-        text: 'Core V2',
+        text: 'Core V3',
         activeMatch: '/yatori-go-core/',
         items: [
           { text: '使用教程', link: '/yatori-go-core/docs' },
@@ -35,34 +35,34 @@ export default defineConfig({
         {
           text: '开始使用',
           items: [
-            { text: '教程目录', link: '/yatori-go-core/v2/' },
-            { text: 'V2 总览', link: '/yatori-go-core/docs' },
-            { text: '快速开始', link: '/yatori-go-core/v2/getting-started' }
+            { text: '教程目录', link: '/yatori-go-core/v3/' },
+            { text: 'V3 总览', link: '/yatori-go-core/docs' },
+            { text: '快速开始', link: '/yatori-go-core/v3/getting-started' }
           ]
         },
         {
           text: '核心概念',
           items: [
-            { text: 'Client API', link: '/yatori-go-core/v2/client-api' },
-            { text: '数据模型', link: '/yatori-go-core/v2/models' },
-            { text: '能力与错误', link: '/yatori-go-core/v2/capabilities' },
-            { text: '会话与持久化', link: '/yatori-go-core/v2/session' }
+            { text: 'Client API', link: '/yatori-go-core/v3/client-api' },
+            { text: '数据模型', link: '/yatori-go-core/v3/models' },
+            { text: '能力与错误', link: '/yatori-go-core/v3/capabilities' },
+            { text: '会话与持久化', link: '/yatori-go-core/v3/session' }
           ]
         },
         {
           text: '平台',
           items: [
-            { text: '平台说明', link: '/yatori-go-core/v2/platforms' }
+            { text: '平台说明', link: '/yatori-go-core/v3/platforms' }
           ]
         },
         {
           text: '进阶',
           items: [
-            { text: 'AI 与题库', link: '/yatori-go-core/v2/ai-and-question-bank' },
-            { text: '动态调用', link: '/yatori-go-core/v2/dynamic-call' },
-            { text: '完整示例', link: '/yatori-go-core/v2/examples' },
-            { text: 'V1 迁移 V2', link: '/yatori-go-core/v2/migration-v1-to-v2' },
-            { text: '常见问题', link: '/yatori-go-core/v2/faq' }
+            { text: 'AI 与题库', link: '/yatori-go-core/v3/ai-and-question-bank' },
+            { text: '动态调用', link: '/yatori-go-core/v3/dynamic-call' },
+            { text: '完整示例', link: '/yatori-go-core/v3/examples' },
+            { text: 'V2 迁移 V3', link: '/yatori-go-core/v3/migration-v2-to-v3' },
+            { text: '常见问题', link: '/yatori-go-core/v3/faq' }
           ]
         },
         {

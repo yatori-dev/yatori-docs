@@ -4,8 +4,8 @@ Yatori 系列项目的使用文档与开发文档。
 
 ## 文档
 
-- [Yatori-go-core V2 总览](yatori-go-core/docs.md)
-- [Yatori-go-core V2 快速开始](yatori-go-core/v2/getting-started.md)
+- [Yatori-go-core V3 总览](yatori-go-core/docs.md)
+- [Yatori-go-core V3 快速开始](yatori-go-core/v3/getting-started.md)
 - [Yatori-go-core 开发手册](yatori-go-core/dev/index.md)
 - [Yatori-go-console 文档](yatori-go-console/docs.md)
 - [Yatori-go-quesbank 文档](yatori-go-quesbank/docs.md)
